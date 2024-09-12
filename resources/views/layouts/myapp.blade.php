@@ -150,12 +150,37 @@
             </div>
           </div>
           <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
-              </a>
-            </li>
+          <li class="nav-item dropdown pe-2 d-flex align-items-center">
+<a href="javascript:;" class="nav-link text-white p-0"
+
+id="dropdownMenuButton" data-bs-toggle="dropdown"
+
+aria-expanded="false">
+<i class="fa fa-user cursor-pointer"></i>
+</a>
+
+<ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-
+labelledby="dropdownMenuButton">
+
+<li class="mb-2">
+<a class="dropdown-item border-radius-md" href="javascript:;">
+My Profile
+</a>
+</li>
+<li class="mb-2">
+<a class="dropdown-item border-radius-md" href="{{ route('logout')}}"
+
+onclick="event.preventDefault();
+
+document.getElementById('logout_form').submit();">
+Logout
+</a>
+<form method="POST" id="logout_form" action="{{ route('logout') }}">
+@csrf
+</form>
+</li>
+</ul>
+</li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
@@ -211,6 +236,7 @@
                     </div>
                   </a>
                 </li>
+                
                 <li>
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
@@ -244,6 +270,7 @@
               </ul>
             </li>
           </ul>
+          
         </div>
       </div>
     </nav>
